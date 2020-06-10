@@ -247,6 +247,7 @@ step-gclient-sync: &step-gclient-sync
           export DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL="$PWD"
           export GYP_MSVS_HASH_9ff60e43ba91947baca460d0ca3b1b980c3a2c23=c151290a4ed475dfdc4e8c784f2f4373f8630fc9
           cat .gclient
+          unset DEPOT_TOOLS_WIN_TOOLCHAIN
         fi
 
         ELECTRON_USE_THREE_WAY_MERGE_FOR_PATCHES=1 gclient sync -f --with_branch_heads --with_tags
