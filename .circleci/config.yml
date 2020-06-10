@@ -250,6 +250,9 @@ step-gclient-sync: &step-gclient-sync
         fi
 
         ELECTRON_USE_THREE_WAY_MERGE_FOR_PATCHES=1 gclient sync -f --with_branch_heads --with_tags
+        # Debug purpose
+        cat src/DEPS
+        echo $DEPOT_TOOLS_WIN_TOOLCHAIN
         # Re-export all the patches to check if there were changes.
         python src/electron/script/export_all_patches.py src/electron/patches/config.json
         cd src/electron
